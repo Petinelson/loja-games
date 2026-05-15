@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Plataforma</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Início</a> |
+        <a href="/cadastro_plataformas">Cadastrar Plataformas</a> |
+        <a href="/consulta_plataformas">Consultar Plataformas</a> |
+        <a href="/cadastro_jogos">Cadastrar Jogos</a> |
+        <a href="/consulta_jogos">Consultar Jogos</a>
+    </nav>
+
+    <div class="form-container">
+        <h2>Cadastrar Plataforma</h2>
+        <!-- O enctype="multipart/form-data" é necessário para enviar arquivos -->
+        <form action="/cadastro_plataformas" method="POST" enctype="multipart/form-data">
+            <label for="nome">Nome da Plataforma:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="fabricante">Fabricante:</label>
+            <input type="text" id="fabricante" name="fabricante" required>
+
+            <label for="imagem">Imagem da Plataforma:</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*" required>
+
+            <button type="submit">Cadastrar Plataforma</button>
+        </form>
+    </div>
+</body>
+</html>

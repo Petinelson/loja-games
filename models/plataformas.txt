@@ -1,0 +1,2 @@
+93669baa-fb1b-4b3c-8a9a-34172b6e7f6d;Nintendo Switch;Nintendo;static/assets\nintendo_switch.png
+49fd4536-b586-47c2-b505-042164520956;Xbox Series X;Microsoft;static/assets\xbox_series_x.jpg

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Jogo</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Início</a> |
+        <a href="/cadastro_plataformas">Cadastrar Plataformas</a> |
+        <a href="/consulta_plataformas">Consultar Plataformas</a> |
+        <a href="/cadastro_jogos">Cadastrar Jogos</a> |
+        <a href="/consulta_jogos">Consultar Jogos</a>
+    </nav>
+    <div class="form-container">
+        <h2>Editar Jogo</h2>
+        <form action="/editar_jogo?linha={{ jogo.linha }}" method="POST">
+            <label for="uuid">UUID:</label>
+            <input type="text" id="uuid" name="uuid" value="{{ jogo.cod_jogo }}" readonly>
+
+            <label for="titulo">Título do Jogo:</label>
+            <input type="text" id="titulo" name="titulo" value="{{ jogo.titulo }}" required>
+
+            <label for="genero">Gênero do Jogo:</label>
+            <input type="text" id="genero" name="genero" value="{{ jogo.genero }}" required>
+
+            <label for="lancamento">Data de Lançamento:</label>
+            <input type="date" id="lancamento" name="lancamento" value="{{ jogo.lancamento }}" required>
+
+            <label for="plataforma">Plataforma:</label>
+            <select id="plataforma" name="plataforma" required>
+                {% for plataforma in plataformas %}
+                <option value="{{ plataforma.cod_plataforma }}" {% if plataforma.cod_plataforma == jogo.cod_plataforma %} selected {% endif %}>
+                    {{ plataforma.nome }}
+                </option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+</body>
+</html>

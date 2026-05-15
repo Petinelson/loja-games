@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Jogos</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Início</a> |
+        <a href="/cadastro_plataformas">Cadastrar Plataformas</a> |
+        <a href="/consulta_plataformas">Consultar Plataformas</a> |
+        <a href="/cadastro_jogos">Cadastrar Jogos</a> |
+        <a href="/consulta_jogos">Consultar Jogos</a>
+    </nav>
+
+    <div class="table-container">
+        <h2>Jogos Cadastrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Título</th>
+                    <th>Gênero</th>
+                    <th>Data de Lançamento</th>
+                    <th>Plataforma</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for jogo in jogos %}
+                <tr>
+                    <td>{{ jogo.linha + 1 }}</td>
+                    <td>{{ jogo.titulo }}</td>
+                    <td>{{ jogo.genero }}</td>
+                    <td>{{ jogo.lancamento }}</td>
+                    <td>{{ jogo.cod_plataforma }}</td>
+                    <td>
+                        <a href="/editar_jogo?linha={{ jogo.linha }}" class="link_jogo">
+                            <img src="/static/assets/edit.png" alt="Editar" title="Editar" class="icon">
+                        </a>
+                        <a href="/excluir_jogo?linha={{ jogo.linha }}" class="link_jogo">
+                            <img src="/static/assets/delete.png" alt="Excluir" title="Excluir" class="icon">
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
