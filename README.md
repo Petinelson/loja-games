@@ -9,6 +9,7 @@
 O **GameMaster** é uma aplicação web CRUD completa para gerenciar um catálogo de jogos e plataformas de videogame. O projeto foi desenvolvido com fins **educacionais**, com foco em apresentar de forma simples e direta os conceitos de rotas HTTP, formulários, manipulação de arquivos e renderização de templates com Flask.
 
 A ideia central é simular o backend de uma loja de videogames, onde é possível cadastrar plataformas (como PlayStation, Xbox, Nintendo) e associar jogos a elas.
+[Teste o projeto](https://petigames.onrender.com)
 
 ---
 
